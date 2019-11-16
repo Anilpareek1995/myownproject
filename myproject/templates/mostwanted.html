@@ -1,0 +1,102 @@
+
+{% extends "station.html"%}
+
+{% load static %}
+
+
+
+{% block body %}
+
+<html>
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+     <style>
+     body{
+         margin-left:20%;
+         margin-top:10px;
+     }
+     body {
+        background-repeat:no-repeat;
+       background-size:cover;
+       }
+       img{
+
+       height:100%;
+       width:100%;
+       }
+     </style>
+
+
+</head>
+<title>mostwanted</title>
+
+
+<body>
+<form class="form-group" action="{% url 'mostwanted' %}" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="row">
+        <div class="col col-md-3">
+          name:<input type="text" class="form-control" name="t1">
+
+        </div>
+        <div class="col col-md-3">
+            height:<input type="text" class="form-control" name="t2">
+        </div>
+        <div class="col col-md-3">
+            color:<input type="text" class="form-control" name="t3">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col col-md-3" >
+          crime type:<select class="mdb-select form-control" name="t4">
+  <option value="" disabled selected>Choose your option</option>
+  <option value="1">robery</option>
+  <option value="2">rape</option>
+  <option value="3">mudrer</option>
+</select>
+
+        </div>
+        <div class="col col-md-3">
+            crime area:<input type="text" class="form-control" name="t5">
+        </div>
+        <div class="col col-md-3">
+            victim:<input type="text" class="form-control" name="t6">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col col-md-3">
+            crime-spot:<input type="text" class="form-control" name="t7">
+        </div>
+        <div class="col col-md-3">
+
+        <div class="input-group" style="margin-top:10px">
+  <div class="input-group-prepend">
+    <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
+  </div>
+  <div class="custom-file">
+    <input type="file" class="custom-file-input" id="inputGroupFile01"
+      aria-describedby="inputGroupFileAddon01" name="t8">
+    <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+  </div>
+</div>
+  </div>
+</div>
+    <div class="row">
+        <div class="col col-md-3"></div>
+        <div class="col col-md-3">
+    <button class="btn btn-success form-control" value="Add">ADD</button>
+        </div>
+    </div>
+
+
+</form>
+
+
+<p></p>
+
+</body>
+</html>
+
+
+
+{% endblock %}

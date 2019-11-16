@@ -1,0 +1,95 @@
+{% extends "station.html"%}
+
+{% load static %}
+
+{% block body %}
+<html>
+<head>
+
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+    <style>
+       body{
+                background-color: black;
+                margin-left: 20%;
+            }
+            .form{
+                height: auto;
+                width: 75%;
+
+                margin-top: 25px;
+                background: white;
+            }
+            .header{
+
+                   text-align: center;
+                   text-decoration-style: dashed;
+
+            }
+            .table{
+                table-layout: none;
+                margin-top: 40px;
+                margin-left: 5px;
+                margin-right: 30px;
+                width: 95%;
+                border: none;
+
+            }
+            .table tr{
+                border: none;
+                height: 73px;
+            }
+            img{
+                height: 60px;
+                width: 60px;
+                border-radius: 50px;
+            }
+
+}
+
+        </style>
+
+    </head>
+    <body>
+
+        <div class="form">
+                <table class="table">
+
+                    {% for i in datas %}
+                    <tr><td style="text-align: center" colspan="3"><img src="{{i.photo.url}}"/></td></tr>
+                    <tr><th>name</th> <td colspan="3">{{i.name}}</td></tr>
+                    <tr><th>height:</th><td>{{i.height}}</td><th>color</th><td>{{i.color}}</td></tr>
+                    <tr><th>crime_type:</th><td>{{i.crime_type}}</td><th>crime_area</th><td>{{i.crime_area}}</td></tr>
+                    <tr><th>crime_spot:</th><td colspan="3">{{i.crime_spot}}</td></tr>
+                    <tr><th>victim</th><td colspan="3">{{i.victim}}</td></tr>
+
+
+                        {% endfor %}
+
+                </table>
+            </div>
+         <div class="container " style="margin-top:30px; margin-left:550px">
+      <span class="step-links">
+          {% if datas.has_previous %}
+              <a class="btn btn-outline-info mb-4" href="?page=1">&laquo; first</a>
+              <a class="btn btn-outline-info mb-4" href="?page={{ datas.previous_page_number }}">previous</a>
+          {% endif %}
+
+          <span class="current btn btn-outline-info mb-4">
+              Page {{ datas.number }} of {{ datas.paginator.num_pages }}.
+          </span>
+
+          {% if datas.has_next %}
+              <a class="btn btn-outline-info mb-4" href="?page={{ datas.next_page_number }}">next</a>
+              <a  class="btn btn-outline-info mb-4" href="?page={{ datas.paginator.num_pages }}">last &raquo;</a>
+          {% endif %}
+      </span>
+  </div>
+
+        </div>
+
+    </body>
+</html>
+
+
+{% endblock %}

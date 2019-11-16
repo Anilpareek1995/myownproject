@@ -1,0 +1,60 @@
+{% extends "layout.html"%}
+
+
+
+{% block body %}
+
+<style>
+    h1{
+    color:black;
+    font-size:50;
+    margin-left:40%;
+    margin-top:100px;
+    }
+    input{
+    height:40px;
+    width:225px;
+    border-top:none
+    border-left:none;
+    border-right:none;
+    }
+    .cntr{height:400px;
+    width:226px;
+    margin-left:40%;
+
+
+
+
+</style>
+<h1>REGISTER HERE</h1>
+<title>REGISTRATION</title>
+<div class="cntr">
+<form name="f1" action="{% url 'register' %}" method="POST" onsubmit="return Validateform()" enctype="multipart/form-data">
+{% csrf_token %}
+
+first-name:<input type="text" name="t1">
+last-name:<input type="text" name="t2">
+username:<input type="text" name="t3">
+email:<input type="text" name="t4">
+password1:<input type="text" name="t5">
+password2:<input type="text" name="t6">
+
+<input type="submit" value="submit">
+</form>
+</div>
+<script type="text/javascript">
+function Validateform(){
+var name=document.f1.getElementByName('t1').value;
+var password=document.f1.getElementByName('t5').value;
+
+if (name==null || name==""){
+  alert("Name can't be blank");
+  return false;
+}else if(password.length<6){
+  alert("Password must be at least 6 characters long.");
+  return false;
+  }
+}
+</script>
+
+{% endblock %}

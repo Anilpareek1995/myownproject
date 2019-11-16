@@ -1,0 +1,48 @@
+
+{% extends "userpannel.html"%}
+
+{% load static %}
+
+
+
+{% block body %}
+
+<html>
+<head>
+     <style>
+     body{
+         margin-left:20%;
+         margin-top:10px;
+     }
+     body {
+	background-image: url("ppp.jpg ");
+        background-repeat:no-repeat;
+       background-size:cover;
+       }
+       img{
+
+       height:100%;
+       width:100%;
+       }
+     </style>
+   
+
+</head>
+<title>Dashboard</title>
+
+
+<body>
+<img src="{% static 'ppp.jpg' %}">
+{% for i in username %}
+<p>{{i}}</p>
+{% endfor %}
+
+
+<p></p>
+
+</body>
+</html>
+
+
+
+{% endblock %}

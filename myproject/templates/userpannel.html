@@ -1,0 +1,91 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+
+<head>
+
+  
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+  <!-- Material Kit CSS -->
+    <link rel="stylesheet" href="{% static 'css/material-dashboard.css' %}">
+
+</head>
+
+<body>
+
+  <div class="wrapper ">
+    <div class="sidebar" data-color="purple" data-background-color="white">
+  
+      <div class="logo">
+        <a href="http://www.creative-tim.com" class="simple-text logo-mini">
+        
+        </a>
+        <a href="http://www.creative-tim.com" class="simple-text logo-normal">
+        
+        </a>
+      </div>
+      <div class="sidebar-wrapper">
+        <ul class="nav">
+
+            <li class="nav-item active  ">
+            <a class="nav-link" href="{% url 'userdashboard' %}">
+              <i class="material-icons">dashboard</i>
+              <p>dashboard</p>
+            </a>
+          </li>
+          <li class="nav-item active  ">
+            <a class="nav-link" href="{% url 'showwanted' %}">
+              <i class="material-icons">question_answer</i>
+              <p>showwanted</p>
+            </a>
+          </li>
+          <li class="nav-item active  ">
+              <a class="nav-link" href="#">
+                <i class="material-icons">update</i>
+                <p>update</p> 
+              </a>
+            </li>
+            
+                <li class="nav-item active  ">
+                  <a class="nav-link" href="#">
+                    <i class="material-icons">feedback</i>
+                    <p>feedback</p> 
+                  </a>
+                </li>
+                    <li class="nav-item active  ">
+                      <a class="nav-link" href="{% url 'profile' %}">
+                        <i class="material-icons">drag_indicator</i>
+                        <p>profile</p>
+                      </a>
+                    </li>
+                    <li class="nav-item active  ">
+                      <a class="nav-link" href="#">
+                        <i class="material-icons">touch_app</i>
+                        <p>print</p>
+                      </a>
+                    </li>
+                     <li class="nav-item active  ">
+                      <a class="nav-link" href="#">
+                        <i class="material-icons">mail</i>
+                        <p>Email</p>
+                      </a>
+                    </li>
+                
+                  <li class="nav-item active  ">
+                      <a class="nav-link" href="#">
+                        <i class="material-icons">logout</i>
+                        <p>logout</p> 
+                      </a>
+                    </li>
+          
+          <!-- your sidebar here -->
+        </ul>
+      </div>
+    </div>
+{% block body%}
+
+{% endblock %}
+</body>
+
+</html>
