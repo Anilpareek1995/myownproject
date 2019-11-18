@@ -1,6 +1,6 @@
-dj-database-url==0.4.2
+dj-database-url==0.5.0
 Django==2.2.7
 pandas==0.25.3
-gunicorn==19.7.1
+gunicorn==20.0.0
 pytz==2019.3
-whitenoise==3.3.1
+whitenoise==4.1.4
